@@ -1,0 +1,26 @@
+{
+  "name": "capture-atlas",
+  "version": "0.0.1",
+  "author": "Bruno Lesieur <bruno.lesieur@gmail.com>",
+  "description": "Exemple de rendu PDF avec NodeAtlas.",
+  "private": false,
+  "scripts": {
+    "start": "node www.lesieur.name.capture.na"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Haeresis/CapturegAtlas.git"
+  },
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Haeresis/CapturegAtlas/issues"
+  },
+  "dependencies": {
+    "node-atlas": "^2.0.8",
+    "puppeteer": "^10.2.0"
+  },
+  "engines": {
+    "node": ">=0.10.10"
+  },
+  "readmeFilename": "README.md"
+}

@@ -1,0 +1,18 @@
+[{
+	"url": "/generator/",
+	"controller": "generator.js",
+	"headers": {
+		"Content-Type": "application/pdf; charset=utf-8"
+	}
+}, {
+	"url": "/pdf/",
+	"variation": "pdf.json",
+	"view": "pdf.htm"
+}, {
+	"url": "/",
+	"view": "index.htm"
+}, {
+	"url": "/page-inexistante/",
+	"redirect": "/",
+	"statusCode": 302
+}]

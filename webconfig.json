@@ -1,0 +1,9 @@
+{
+	"httpPort": 7764,
+	"headers": { "Access-Control-Allow-Origin": "*" },
+ 	"urlRelativeSubPath": "capture/",
+ 	"controller": "common.js",
+ 	"variation": "common.json",
+ 	"pageNotFound": "/page-inexistante/",
+	"routes": "routes.json"
+}

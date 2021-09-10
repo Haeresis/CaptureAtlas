@@ -5,7 +5,8 @@ exports.changeDom = function (next, locals) {
 
 	(async () => {
 		const browser = await puppeteer.launch({
-			ignoreHTTPSErrors: true,
+			// ignoreHTTPSErrors: true,
+			args: ['--no-sandbox']
 		});
 
 		const page = await browser.newPage();

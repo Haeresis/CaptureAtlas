@@ -446,16 +446,49 @@
 				box-shadow: 1px 4px 14px #000;
 			}
 
+            #p1 {
+                position: relative;
+            }
+
+            .download-pdf {
+                position: relative;
+                width: 215.9mm;
+                margin: 0 auto;
+            }
+
+            .download-pdf-button {
+                font-family: NodestoCaps, nodesto, sans-serif;
+                position: absolute;
+                top: 0;
+                left: calc(100% + 16px);
+                display: inline-block;
+                padding: 16px;
+                border-radius: 4px;
+                box-shadow: 1px 4px 14px #000;
+                color: #337ab7;
+                text-decoration: none;
+            }
+
+            .download-pdf-button:hover {
+                color: #23527c;
+            }
+
 			@media print {
 				.page {
 					box-shadow: none;
 					margin: 0;
     				height: 297.1312mm;	
 				}
+                .download-pdf-button {
+                    display: none;
+                }
 			}
         </style>
     </head>
     <body>
+        <div class="download-pdf">
+            <a class="download-pdf-button" href="../generator/" target="_blank">Download PDF</a>
+        </div>
     	<div class="page" id="p1">
 			<div class="cover-header">
 				<p></p>

@@ -9,6 +9,9 @@
 	"variation": "pdf.json",
 	"view": "pdf.htm"
 }, {
+	"url": "/numenera-dicovery/",
+	"view": "numenera-dicovery.htm"
+}, {
 	"url": "/",
 	"view": "index.htm"
 }, {

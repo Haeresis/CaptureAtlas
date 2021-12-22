@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Lesieur's API</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <style type="text/css">
+            @font-face {
+                font-family: "ff145";
+                src: url("../media/fonts/0145.woff2") format("woff2");
+            }
+            @font-face {
+                font-family: "ff202";
+                src: url("../media/fonts/0202.woff2") format("woff2");
+            }
+            @font-face {
+                font-family: "ff80";
+                src: url("../media/fonts/0080.woff2") format("woff2");
+            }
+
+        	* {
+				-webkit-print-color-adjust: exact;
+			}
+
+        	body {
+				margin: 0;
+				padding: 0;
+        	}
+
+        	.page {
+				column-count: 2;
+				column-fill: auto;
+				column-gap: 1cm;
+				column-width: 8cm;
+				-webkit-column-count: 2;
+				-moz-column-count: 2;
+				-webkit-column-width: 8cm;
+				-moz-column-width: 8cm;
+				-webkit-column-gap: 1cm;
+				-moz-column-gap: 1cm;
+				counter-increment: phb-page-numbers;
+				position: relative;
+				z-index: 15;
+				box-sizing: border-box;
+				overflow: hidden;
+				height: 279.4mm;
+				width: 215.9mm;
+				padding: 1cm 1.7cm;
+				padding-bottom: 1.5cm;
+				background-color: #EEE5CE;
+				font-family: BookSanity;
+				font-size: .317cm;
+				text-rendering: optimizeLegibility;
+				page-break-before: always;
+				page-break-after: always;
+                overflow: hidden;
+        	}
+        	.page {
+                margin: 24px auto;
+                box-shadow: 1px 4px 14px #000;
+        	}
+
+            .download-pdf {
+                position: relative;
+                width: 215.9mm;
+                margin: 0 auto;
+            }
+
+            .download-pdf-button {
+                font-family: NodestoCaps, nodesto, sans-serif;
+                position: absolute;
+                top: 0;
+                left: calc(100% + 16px);
+                display: inline-block;
+                padding: 16px;
+                border-radius: 4px;
+                box-shadow: 1px 4px 14px #000;
+                color: #337ab7;
+                text-decoration: none;
+            }
+
+            .download-pdf-button:hover {
+                color: #23527c;
+            }
+
+			@media print {
+				.page {
+					box-shadow: none;
+					margin: 0;
+				}
+                .download-pdf-button {
+                    display: none;
+                }
+			}
+
+            .background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 215.9mm;
+            }
+            .item {
+                transform: translate(-50%, -50%);
+                white-space: nowrap;
+                padding: 0;
+                margin: 0;
+                border: none;
+                height: 1px;
+                line-height: 1;
+                position: absolute;
+            }
+            .item-right {
+                transform: translate(-100%, -50%);
+                white-space: nowrap;
+                padding: 0;
+                margin: 0;
+                border: none;
+                height: 1px;
+                line-height: 1;
+                position: absolute;
+            }
+            .item-left {
+                transform: translate(0%, -50%);
+                white-space: nowrap;
+                padding: 0;
+                margin: 0;
+                border: none;
+                height: 1px;
+                line-height: 1;
+                position: absolute;
+            }
+            .item img {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .image {
+                transform: translate(-50%, -50%);
+                white-space: nowrap;
+                padding: 0;
+                margin: 0;
+                border: none;
+                height: 1px;
+                line-height: 1;
+                position: absolute;
+                overflow: hidden;
+            }
+            .image img {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .cadre {
+                top: 0;
+                left: 0;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+
+
+
+
+            .page-1-discovery {
+                color: #323d6e;
+                font-family: ff145, Georgia1, Georgia, serif;
+                font-weight: normal;
+                font-style: normal;
+                left: 111mm;
+                top: 84.7mm;
+                font-size: 15mm;
+            }
+            .page-1-credits {
+                color: #545f1f;
+                font-family: ff145, Georgia1, Georgia, serif;
+                font-weight: normal;
+                font-style: normal;
+                left: 105mm;
+                top: 26mm;
+                font-size: 8mm;
+                letter-spacing: 0.2mm;
+            }
+            .page-1-credit-left,
+            .page-1-artists,
+            .page-1-cartographers,
+            .page-1-editorial-board {
+                font-family: ff202, Trebuchet MS1, Helvetica, sans-serif;
+                font-weight: bold;
+                font-style: normal;
+                font-size: 3.4mm;
+                line-height: 4.2mm
+            }
+            .page-1-credit-left {
+                left: 104mm;
+                top: 43mm;
+                text-align: right;
+                display: block;
+            }
+            .page-1-artists {
+                left: 105.2mm;
+                top: 79.9mm;
+            }
+            .page-1-cartographers {
+                left: 105.2mm;
+                top: 120.9mm;
+            }
+            .page-1-editorial-board {
+                left: 105.2mm;
+                top: 133.1mm;
+            }
+
+            .page-1-credit-right,
+            .page-1-artists-list,
+            .page-1-cartographers-list,
+            .page-1-editorial-board-list {
+                font-family: ff80, Verdana, Verdana, Geneva, sans-serif;
+                font-weight: normal;
+                font-style: normal;
+                font-size: 3.4mm;
+                line-height: 4.2mm;
+                word-spacing: 0.05mm;
+            }
+            .page-1-credit-right {
+                left: 106.6mm;
+                top: 43mm;
+                text-align: left;
+                display: block;
+            }
+            .page-1-artists-list {
+                left: 105.4mm;
+                top: 84mm;
+                text-align: center;
+                display: block;
+            }
+            .page-1-cartographers-list {
+                left: 105.4mm;
+                top: 125mm;
+                text-align: center;
+            }
+            .page-1-editorial-board-list {
+                left: 105.4mm;
+                top: 137.5mm;
+                text-align: center;
+                display: block;
+            }
+
+            .page-1-perso-1 {
+                top: 236.7mm;
+                left: 150.5mm;
+                width: 56mm;
+                height: 77.7mm;
+                overflow: hidden;
+            }
+            .page-1-perso-1 img {
+                width: 215.9mm;
+                top: -280.5mm;
+                left: 0;
+            }
+
+            .page-1-perso-2 {
+                top: 239.7mm;
+                left: 55.9mm;
+                width: 50mm;
+                height: 70.4mm;
+                overflow: hidden;
+            }
+            .page-1-perso-2 img {
+                width: 215.9mm;
+                top: -280.7mm;
+                left: -55.5mm;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="download-pdf">
+            <a class="download-pdf-button" href="../generator/" target="_blank">Download PDF</a>
+        </div>
+        <div class="page page-1">
+            <img class="background" src="https://html.scribdassets.com/8lotlky1c090kgvg/images/1-9274c9e3ae.jpg">
+        </div>
+        <div class="page page-2">
+            <img class="background" src="https://html.scribdassets.com/8lotlky1c090kgvg/images/3-df4b920585.jpg">
+            <span class="item page-1-discovery">DISCOVERY</span>
+        </div>
+        <div class="page page-3">
+            <img class="background" src="https://html.scribdassets.com/8lotlky1c090kgvg/images/4-b8fe04afd4.png">
+            <img class="cadre" src="../media/images/cadre.jpg">
+
+            <span class="item page-1-credits">CRÉDITS</span>
+            <span class="item-right page-1-credit-left">
+                Concepteurs<br>
+                Directeur de la création<br>
+                Directeur de la rédaction<br>
+                Rédacteur/Correcteur de textes<br>
+                Directeur artistique<br>
+                Conception graphique supplémentaire<br>
+                Artiste de couverture<br>
+            </span>
+            <span class="item-left page-1-credit-right">
+                Monte Cook, Bruce R. Cordell, Sean K. Reynolds<br>
+                Monte Cook<br>
+                Shanna Germain<br>
+                Ray Vallese<br>
+                Bear Weiter<br>
+                Zoa Smalley<br>
+                Lie Setiawan<br>
+            </span>
+            <span class="item page-1-artists">Artistes</span>
+            <span class="item page-1-artists-list">
+                Samuel Araya, Eren Arik, Jacob Atienza, Bruce Brenneise, Richard Burgess, chrom, Biagio D’Alessandro, Florian Devos,<br>
+                Sara Diesel, Dreamstime.com, Jason Engle, Felipe Escobar, Luke Green, Josu Hernaiz, Inkognit, Guido Kuip,<br>
+                Kezrek Laczin, Brandon Leach, Eric Lofgren, Anton Kagounkin Magdalina, Patrick McEvoy, Jeremy McHugh,<br>
+                Brynn Metheney, Giorgio De Michele (Erebus), Federico Musetti, Irina Nordsol, Mirco Paganessi, Grzegorz Pedrycz,<br>
+                Mike Perry, John Petersen, Michael Phillippi, Roberto Pitturru, Scott Purdy, Aaron Riley, Riccardo Rullo, Seth Rutledge,<br>
+                Sam Santala, Lie Setiawan, Joe Slucher, Lee Smith, Kim Sokol, Hugo Solis, Matt Stawicki, Mark Tarrisse, Cyril Terpent,<br>Allison Theus, Prosper Tipaldi, Cory Trego-Erdner, Tiﬀany Turrill, Shane Tyree, Jordan K. Walker, Chris Waller,<br>
+                Adrian Wilkins, Cathy Wilkins, Ben Wootten, Kieran Yanner, Kirsten Zirngibl
+            </span>
+            <span class="item page-1-cartographers">Cartographes</span>
+            <span class="item page-1-cartographers-list">
+                Hugo Solis, Christopher West
+            </span>
+            <span class="item page-1-editorial-board">Monte Cook Games Editorial Board</span>
+            <span class="item page-1-editorial-board-list">
+                Scott C. Bourgeois, David Wilson Brown, Eric Coates, Gareth Hodges, Mila Irek,<br>
+                Jeremy Land, Laura Wilkinson, Marina Wold, George Ziets
+            </span>
+            <div class="image page-1-perso-1"><img src="https://html.scribdassets.com/8lotlky1c090kgvg/images/4-b8fe04afd4.png"></div>
+            <div class="image page-1-perso-2"><img src="https://html.scribdassets.com/8lotlky1c090kgvg/images/4-b8fe04afd4.png"></div>
+        </div>
+    </body>
+</html>

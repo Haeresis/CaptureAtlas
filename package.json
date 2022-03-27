@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Haeresis/CapturegAtlas.git"
+    "url": "https://github.com/MachinisteWeb/CapturegAtlas.git"
   },
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/Haeresis/CapturegAtlas/issues"
+    "url": "https://github.com/MachinisteWeb/CapturegAtlas/issues"
   },
   "dependencies": {
     "node-atlas": "^2.0.8",

@@ -5,12 +5,21 @@
 		"Content-Type": "application/pdf; charset=utf-8"
 	}
 }, {
+	"url": "/ff9-guide-mots-de-passe-playonline-francais/pdf/",
+	"controller": "ff9pdf.js",
+	"headers": {
+		"Content-Type": "application/pdf; charset=utf-8"
+	}
+}, {
 	"url": "/pdf/",
 	"variation": "pdf.json",
 	"view": "pdf.htm"
 }, {
 	"url": "/numenera-dicovery/",
 	"view": "numenera-dicovery.htm"
+}, {
+	"url": "/ff9-guide-mots-de-passe-playonline-francais/",
+	"view": "ff9guide.htm"
 }, {
 	"url": "/",
 	"view": "index.htm"

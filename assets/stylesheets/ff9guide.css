@@ -1,0 +1,423 @@
+@font-face{
+    font-family:"runic-mt-condensed-regular";
+    src: url("../media/fonts/RunicMTCondensed.ttf") format("woff"),
+         url("../media/fonts/RunicMTCondensed.ttf") format("opentype"),
+         url("../media/fonts/RunicMTCondensed.ttf") format("truetype");
+}
+@font-face{
+    font-family:"ff9title";
+    src: url("../media/fonts/14df6a962bfd5873b.woff2") format("woff"),
+         url("../media/fonts/14df6a962bfd5873b.woff2") format("opentype"),
+         url("../media/fonts/14df6a962bfd5873b.woff2") format("truetype");
+}
+@font-face{
+    font-family:"SenatorUltra";
+    src: url("../media/fonts/SenatorUltra.otf") format("woff"),
+         url("../media/fonts/SenatorUltra.otf") format("opentype"),
+         url("../media/fonts/SenatorUltra.otf") format("truetype");
+}
+@font-face{
+    font-family:"OfficinaSans-Book";
+    src: url("../media/fonts/OfficinaSans-Book.otf") format("woff"),
+         url("../media/fonts/OfficinaSans-Book.otf") format("opentype"),
+         url("../media/fonts/OfficinaSans-Book.otf") format("truetype");
+}
+@font-face{
+    font-family:"playbutton";
+    src: url("../media/fonts/playb.ttf") format("woff"),
+         url("../media/fonts/playb.ttf") format("opentype"),
+         url("../media/fonts/playb.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    box-sizing: border-box;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+.title {
+    font-family: 'ff9title', sans-serif;  
+    font-size: 27.5mm;
+    text-shadow: 2px 2px 2px #E69800;
+    transform: translate(-20mm, 0mm) scale(0.75, 1);
+    white-space: nowrap;
+    line-height: 37mm;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.title .playonline {
+    display: inline-block;
+    transform: translate(-10mm, 0mm) scale(0.75, 1);
+}
+.title .big {  
+    font-size: 38mm;
+}
+
+.background {
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 210mm;
+    height: 296.866mm;
+}
+
+.number {
+    font-family: 'ff9title', sans-serif;  
+    font-size: 11mm;
+    text-align: center;
+    color: #AF7416;
+    line-height: 9mm; 
+    background-color: #E9B700;
+    
+    position:absolute;
+    top: 284.1mm;
+    left: 0;
+    width: 19.8mm;
+    height: 12.966mm;
+}
+.number:after {
+    content: counter(page);
+    left: 0; 
+    top: 100%;
+    white-space: nowrap;  
+}
+.page:nth-child(odd) .number {
+    left: 189.2mm;
+    width: 20.8mm;
+}
+.play-button {
+    font-family: 'playbutton', sans-serif;
+    font-size: 4mm;
+    vertical-align: middle;
+}
+
+.code-left {
+    font-family: 'SenatorUltra', sans-serif;
+    font-size: 5.6mm;
+    color: #8C4F19;
+    line-height: 9.8mm;
+    padding: 0 1.5mm;
+    letter-spacing: .6mm;
+    
+    position:absolute;
+    text-align: left;
+    top: 284.2mm;
+    left: 20.2mm;
+    width: 169.6mm;
+    height: 12.866mm;
+}
+
+.page:nth-child(odd) .code-left:nth-child(even) {
+    display: none;
+}
+.page:nth-child(odd) .code-right:nth-child(odd) {
+    display: none;
+}
+.page:nth-child(odd) .background:nth-child(even) {
+    display: none;
+}
+.page:nth-child(even) .code-left:nth-child(odd) {
+    display: none;
+}
+.page:nth-child(even) .code-right:nth-child(even) {
+    display: none;
+}
+.page:nth-child(even) .background:nth-child(odd) {
+    display: none;
+}
+.page:first-child .code-left:nth-child(odd) {
+    display: none;
+}
+
+.code-right {
+    font-family: 'SenatorUltra', sans-serif;  
+    font-size: 5.6mm;
+    color: #8C4F19;
+    line-height: 9.8mm;
+    padding: 0 1.5mm;
+    letter-spacing: .6mm;
+    
+    position:absolute;
+    text-align: right;
+    top: 284.2mm;
+    left: 20.2mm;
+    width: 169.6mm;
+    height: 12.866mm;
+}
+.page:nth-child(odd) .code-right {
+    width: 168.6mm;
+}
+
+.line-top {
+    position:absolute;
+    top: 16.8mm;
+    left: 15.4mm;
+    width: 177.1mm;
+    height: .4mm;
+    background-color: #E09806;
+}
+.page:nth-child(odd) .line-top {
+    width: 173.5mm;
+
+}
+.page:first-child .line-top {
+    top: 38.2mm;
+    left: 9mm;
+    width: 180mm;
+}
+
+.line-bottom {
+    position:absolute;
+    top: 283.8mm;
+    left: 0;
+    width: 210mm;
+    height: .4mm;
+    background-color: #E09806;
+}
+
+.line-left {
+    position:absolute;
+    top: 13.5mm;
+    left: 19.8mm;
+    width: .4mm;
+    height: 283.866mm;
+    background-color: #E09806;
+}
+.page:nth-child(odd) .line-left {
+    top: 10.5mm;
+    height: 281.866mm;
+}
+.page:first-child .line-left {
+    top: 36mm;
+    height: 256.366mm;
+}
+
+.line-right {
+    position:absolute;
+    top: 10.5mm;
+    left: 189.8mm;
+    width: .4mm;
+    height: 281.866mm;
+    background-color: #E09806;
+}
+.page:nth-child(odd) .line-right {
+    top: 13.5mm;
+    left: 188.8mm;
+    height: 283.366mm;
+}
+
+h2 {
+    font-family: 'SenatorUltra', sans-serif;
+    font-size: 11.5mm;
+    padding: 2.2mm 2.2mm;
+    line-height: 9.5mm;
+    display: block;
+    color: #8C4F19;
+    transform: translate(-18mm, 0mm) scale(0.78, 1);
+}
+h3 {
+    font-family: 'SenatorUltra', sans-serif;
+    font-size: 10mm;
+    padding: 1.2mm 2.2mm;
+    line-height: 10mm;
+    transform: translate(-20.5mm, 0mm) scale(0.75, 1);
+    margin-right: -48mm;
+    margin-left: -7mm;
+}
+p, li {
+    font-family: 'OfficinaSans-Book', sans-serif;
+    line-height: 3.75mm;
+    font-size: 3.6mm;
+    padding: 0 2.2mm;
+}
+table {
+    border-collapse: collapse;
+    border-left: 4mm solid #E09806;
+    border-bottom: .4mm solid #E09806;
+    margin-left: -4mm;
+    width: calc(100% + 4mm)
+}
+thead {
+    background-color: #fff;
+}
+th {
+    text-align: left;
+}
+thead th {
+    border-top: .4mm solid #E09806;
+    border-bottom: .4mm solid #E09806;
+}
+.table-separator.table-separator {
+    background-color: transparent;
+}
+.table-separator td {
+    height: 2mm;
+}
+tr + tr {
+    border-top: .1mm solid #000; 
+}
+.table-separator + .table-separator {
+    border-top: 0; 
+}
+.table-separator + .table-separator td {
+    height: 0;
+}
+td, th {
+    border-left: .4mm solid #E09806;
+    vertical-align: top;
+}
+tbody tr:nth-child(even) {
+    background-color: #fff; 
+}
+tbody tr:nth-child(odd) {
+    background-color: #FFF7DE; 
+}
+
+.content span.no-wrap,
+.content p.no-wrap span {
+    white-space: nowrap;
+}
+
+.content .separator {
+    border-bottom: .4mm solid #E09806;
+}
+.content .bg-white {
+    background-color: white;
+}
+.content img {
+    border: .4mm solid #E09806;
+    border-left: 4mm solid #E09806;
+}
+.content table img {
+    border: 0;
+}
+.content .img-center {
+    text-align: center;
+}
+.content .img-block img {
+    display: block;
+}
+.content .base-bottom {
+    vertical-align: bottom;
+}
+.content .img-float-left {
+    clear: left;
+}
+.content .img-float-left img {
+    float: left;
+    margin-right: 2mm;
+    margin-bottom: 2mm;
+    margin-left: -4mm;
+}
+.content .img-float-right img {
+    float: right;
+    margin-bottom: 2mm;
+    margin-left: 2mm;
+}
+.content p {
+    margin-top: 2mm;
+    margin-bottom: 2mm;
+}
+.content li {
+    margin-top: 2mm;
+    margin-bottom: 2mm;
+    list-style-position: inside;
+}
+.content .relative-img-left {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin-left: -4mm;
+    border: .4mm solid #E09806;
+    border-left: 4mm solid #E09806;
+}
+.content .relative-img-left img {
+    border: 0;
+    float: none;
+    position: absolute;
+}
+
+.ff9guide {
+    counter-reset: page 178;
+    line-height: 1.5;
+    padding-top: 6mm;
+    padding-bottom: 6mm;
+}
+
+.page {
+    counter-increment: page;
+    background-color: #fff;
+    box-shadow: 1mm 4mm 14mm #000;
+    box-sizing: border-box;
+    font-size: .317cm;
+    height: 296.866mm;
+    margin: 4mm auto;
+    overflow: hidden;
+    padding: 26mm;
+    page-break-after: always;
+    page-break-before: always;
+    position: relative;
+    text-rendering: optimizeLegibility;
+    width: 210mm;
+    z-index: 3;
+}
+
+.content {
+    position:absolute;
+    top: 17.2mm;
+    left: 16.19mm;
+    width: 173.62mm;
+    height: 266.6mm;
+    padding-left: 4mm;
+    /* overflow: hidden; */
+}
+.page:nth-child(odd) .content {
+    width: 172.62mm;
+}
+.page:first-child .content {
+    top: 38.6mm;
+    height: 245.2mm;
+}
+
+
+.download-pdf {
+    text-align: center;
+}
+
+.download-pdf-button {
+    font-family: 'SenatorUltra', sans-serif;
+    top: 4mm;
+    left: 0;
+    display: inline-block;
+    padding: 6mm;
+    border-radius: 1mm;
+    box-shadow: 0mm 0mm 4mm #000;
+    color: #337ab7;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.download-pdf-button:hover {
+    color: #23527c;
+}
+
+@media print {
+    .ff9guide {
+        margin: 0;
+        padding: 0;
+    }
+    .page {
+        box-shadow: none;
+        margin: 0;
+        height: 296.866mm;
+    }
+    .download-pdf {
+        display: none;
+    }
+}
